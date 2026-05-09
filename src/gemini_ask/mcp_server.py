@@ -95,10 +95,11 @@ async def _format_json(response_text: str, query: str) -> str:
     },
 )
 async def gemini_ask_query(params: GeminiAskInput) -> str:
-    """Gemini AIを使用して質問に答えます。
+    """Google検索を利用したAIアシスタント。質問に対して最新情報に基づいた回答を生成します。
 
-    このツールはGoogle Gemini APIを使用して、指定された質問に対する回答を生成します。
-    Google Search機能が有効化されており、最新情報に基づいた回答が可能です。
+    このツールはGoogle Gemini APIとGoogle検索を組み合わせて、最新の情報に基づいた回答を提供します。
+    最新ニュース、現在の天気、株価など、最新の情報が必要な質問に対応しています。
+    検索結果のリストではなく、分析された回答を提供します。
 
     Args:
         params (GeminiAskInput): 入力パラメータ
