@@ -39,7 +39,7 @@ def main():
     # model: 使用するGeminiモデルを指定します。デフォルトは "gemini-2.5-flash" です。オプショナル。
     parser = argparse.ArgumentParser(description="Gemini APIを使用して質問に答えるサンプルコード")   
     parser.add_argument("query", help="質問内容を指定します。")
-    parser.add_argument("--model", help="使用するGeminiモデルを指定します。デフォルトは \"gemini-2.5-flash\" です。", default="gemini-2.5-flash")
+    parser.add_argument("--model", help="使用するGeminiモデルを指定します。デフォルトは \"gemini-3.5-flash\" です。", default="gemini-3.5-flash")
     args = parser.parse_args()  
     check_api_key()
     if API_KEY == "":

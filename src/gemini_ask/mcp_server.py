@@ -48,8 +48,8 @@ class GeminiAskInput(BaseModel):
         max_length=200,
     )
     model: str = Field(
-        default="gemini-2.5-flash",
-        description="使用するGeminiモデル名（例: 'gemini-2.5-flash', 'gemini-2.5-pro'）",
+        default="gemini-3.5-flash",
+        description="使用するGeminiモデル名（例: 'gemini-3.5-flash', 'gemini-3.1-pro-preview'）",
     )
     response_format: ResponseFormat = Field(
         default=ResponseFormat.MARKDOWN,
@@ -104,7 +104,7 @@ async def gemini_ask_query(params: GeminiAskInput) -> str:
     Args:
         params (GeminiAskInput): 入力パラメータ
             - query (str): 質問内容（必須、1-200文字）
-            - model (str): Geminiモデル名（デフォルト: 'gemini-2.5-flash'）
+            - model (str): Geminiモデル名（デフォルト: 'gemini-3.5-flash'）
             - response_format (ResponseFormat): 出力形式（'markdown' または 'json'、デフォルト: 'markdown'）
 
     Returns:
@@ -120,7 +120,7 @@ async def gemini_ask_query(params: GeminiAskInput) -> str:
 
     Examples:
         - gemini_ask_query(query="今日の天気は？")
-        - gemini_ask_query(query="量子力学について教えて", model="gemini-2.5-pro")
+        - gemini_ask_query(query="量子力学について教えて", model="gemini-3.1-pro-preview")
         - gemini_ask_query(query="最新のAI動向は？", response_format="json")
 
     Error Handling:
